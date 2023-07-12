@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fotoblog</title>
+
+    <link rel="icon" type="image/svg" href="./assets/camera-white.svg">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="container">
+            <nav>
+                <img class="logoMarca" src="./assets/camera.svg" alt="Imagem da logomarca" />
+
+                <ul>
+                    <li class="noActive">Home</li>
+                    <li class="active">Galeria</li>
+                </ul>
+            </nav>
+
+            <form>
+                <div class="input-wrapper">
+                    <label for="search">Pesquise por imagens e coleções</label>
+                    <input id="search" type="text" placeholder="Pesquise por imagens e coleções">
+                </div>
+            </form>
+
+            <button name="buttonTheme" onclick="alterarTheme()">
+                <img id="img" src="./assets/moon-stars.png" alt="Icone de um sol">
+            </button>
+
+            <img class="avatar" src="./assets/perfil.jpg" alt="Imagem de uma homem" />
+        </header>
+
+        <main>
+            <div class="container">
+                <h1>Galeria</h1>
+
+                <section class="gallery">
+
+                    <figure class="item">
+                        <img src="./assets/1.png" alt="Imagem de uma Workspace elétrica">
+
+                        <figcaption class="details">
+                            <h2>Workspace elétrica</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 0.6s">
+                        <img src="./assets/2.png" alt="Imagem de um setup de trabalho Dark and red">
+
+                        <figcaption class="details">
+                            <h2>Dark and red</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 0.8s">
+                        <img src="./assets/3.png" alt="Imagem de um setup de trabalho Organização e grids">
+
+                        <figcaption class="details">
+                            <h2>Organização e grids</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 1s">
+                        <img src="./assets/4.png" alt="Imagem de um setup de trabalho Colméia">
+
+                        <figcaption class="details">
+                            <h2>Colméia</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 1.2s">
+                        <img src="./assets/5.png" alt="Imagem de um setup de trabalho Setup de escritor" />
+
+                        <figcaption class="details">
+                            <h2>Setup de escritor</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 1.4s">
+                        <img src="./assets/6.png" alt="Imagem de um setup de trabalho Ergonomia e cores" />
+
+                        <figcaption class="details">
+                            <h2>Ergonomia e cores</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 1.6s">
+                        <img src="./assets/7.png" alt="Imagem de um setup de trabalho Show de luzes" />
+
+                        <figcaption class="details">
+                            <h2>Show de luzes</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 1.8s">
+                        <img src="./assets/8.png" alt="Imagem de um setup de trabalho Deep purple" />
+
+                        <figcaption class="details">
+                            <h2>Deep purple</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="item" style="--delay: 2s">
+                        <img src="./assets/9.png" alt="Imagem de um setup de trabalho Multi-Screen" />
+
+                        <figcaption class="details">
+                            <h2>Multi-Screen</h2>
+                            <div class="tags">
+                                <span>TAG</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </section>                
+            </div>
+        </main>
+        <footer class="container">
+            <p>
+                © 2023 - Rocketseat Explorer
+            </p>
+        </footer>
+    </div>
+
+
+    <!-- Script com função que altera o as cores de acordo com tema selecionado -->
+    <script>
+        let rootStyles = getComputedStyle(document.documentElement);
+
+        function alterarTheme() {
+
+            const logo = document.getElementsByClassName("logoMarca");
+
+            if (rootStyles.getPropertyValue('--color-base-white') === "#ffffff") {
+
+                for (let i = 0; i < logo.length; i++) {
+                    logo[i].src = "./assets/camera-white.svg";
+                }
+
+                document.getElementById("img").setAttribute("src", "./assets/sun.png");
+
+                document.documentElement.style.setProperty('--color-base-white', '#202024');
+                document.documentElement.style.setProperty('--color-base-gray-100', '#121214');
+                document.documentElement.style.setProperty('--color-base-gray-300', '#3D3D3D');
+                document.documentElement.style.setProperty('--color-base-gray-500', '#8d8d99');
+                document.documentElement.style.setProperty('--color-base-gray-900', '#f5f5f5');
+
+            } else {
+
+                for (let i = 0; i < logo.length; i++) {
+                    logo[i].src = "./assets/camera.svg";
+                }
+
+                document.getElementById("img").setAttribute("src", "./assets/moon-stars.png");
+
+                document.documentElement.style.setProperty('--color-base-white', '#ffffff');
+                document.documentElement.style.setProperty('--color-base-gray-100', '#f5f5f5');
+                document.documentElement.style.setProperty('--color-base-gray-300', '#8d8d99');
+                document.documentElement.style.setProperty('--color-base-gray-500', '#3D3D3D');
+                document.documentElement.style.setProperty('--color-base-gray-900', '#202024');
+            }    
+        }  
+    </script>
+
+</body>
+</html>
