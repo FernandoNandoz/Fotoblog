@@ -4,7 +4,7 @@
 
 ## 🖥️ Projeto
 
-Esse projeto de galeria de fotos é desenvolvido no nível 03 do Explorer.
+Esse projeto de galeria de fotos chamado Fotoblog é desenvolvido no nível 03 do Explorer.
 
 ## 🚀 Tecnologias
 
